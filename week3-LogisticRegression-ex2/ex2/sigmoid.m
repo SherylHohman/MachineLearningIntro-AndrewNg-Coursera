@@ -1,8 +1,8 @@
 function g = sigmoid(z)
-%SIGMOID Compute sigmoid functoon
+%SIGMOID Compute sigmoid function
 %   J = SIGMOID(z) computes the sigmoid of z.
 
-% You need to return the following variables correctly 
+% You need to return the following variables correctly
 g = zeros(size(z));
 
 % ====================== YOUR CODE HERE ======================
@@ -10,6 +10,9 @@ g = zeros(size(z));
 %               vector or scalar).
 
 
+% sigmoid == g(z) == 1 / [1 + e^-z]
+%g = (1 + e^-z) .^-1               % only works for scalar, not matrix)
+g = (((g .+ e) .^-z) .+1 ) .^-1    % matrix and scalar
 
 
 
