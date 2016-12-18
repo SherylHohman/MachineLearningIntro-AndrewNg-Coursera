@@ -19,11 +19,15 @@ week 03: Logistical Regression
   1.1 Visualizing the data  : Plots the Data for Visual Inspection
   1.2 Implementation
     1.2.1 Warmup Exercise: sigmoid function 
+          (sigmoid.m)
+
           h_theta(x) = g(Theta_Transform * X)
 
           g(z)= 1/[1 + e ^-z]
 
     1.2.2 Cost Function and Gradient
+          (costFunction.m)
+
           J(theta) = 1/m * SUM |i=1..m|
                                [     -yi  * log(    h_theta(xi)) 
                                  - (1-yi) * log(1 - h_theta(xi))
@@ -36,4 +40,28 @@ week 03: Logistical Regression
           where h_theta(x) uses the sigmoid function above :logistic regression
           (otherwise the gradient (derivative) form is exactly like linear regression)
 
+          
+          RESULTS OF RUNNING THIS FUNCTION:   
+          (costFunction.m)
+          Calculates Cost of initial params of theta (zeros): 
+                  .693174
+          Calculates Gradient at initial params of theta (zeros): 
+              [  -0.100000
+                 -12.009217
+                 -11.262842
+              ]
+    
+    1.2.3 Learning Paramaters using fminunc
+          (ex2.m, lines 77-108, utalizes Octave's built in fminunc)
+
+          Uses fminunc function to find optimal values for theta:
+               [ -25.161272
+                0.206233
+                0.201470
+               ]
+          And Cost at optimal values for theta:
+                 0.203498
+          And Plots Decision Boundry for this function as Figure 2
+
+         
 
