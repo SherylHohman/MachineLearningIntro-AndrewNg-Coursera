@@ -63,5 +63,15 @@ week 03: Logistical Regression
                  0.203498
           And Plots Decision Boundry for this function as Figure 2
 
+    1.2.4 Evaluating Logistic Regression
+          (predict.m)
+
+          Calculates the training accuracy of our classifier
+          (where optimal theta values were determined by fminunc in 1.2.3)
+
+          .. percentage of matches by our classifier on the training data:
+          Train Accuracy: 89.000000
+
+
          
 
