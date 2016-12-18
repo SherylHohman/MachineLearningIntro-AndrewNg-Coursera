@@ -12,8 +12,8 @@ g = zeros(size(z));
 
 % sigmoid == g(z) == 1 / [1 + e^-z]
 
-%g = (1 + e^-z) .^-1               % only works for scalar, not matrix)
-g = (((g .+ e) .^-z) .+1 ) .^-1    % matrix and scalar
+%g = (1 + e^-z) .^-1;               % only works for scalar, not matrix)
+g = (((g .+ e) .^-z) .+1 ) .^-1;    % matrix and scalar
 
 
 % =============================================================
