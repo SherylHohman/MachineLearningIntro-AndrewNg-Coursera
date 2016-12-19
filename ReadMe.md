@@ -1,6 +1,6 @@
 ReadMe.md
 
-Intro to Machine Learning Course
+#Intro to Machine Learning Course
 Andrew Ng of Stanford University
 Coursera
 
@@ -8,14 +8,18 @@ week 01:
 
 week 02:
 
-week 03: Logistical Regression
+##week 03: Logistical Regression
   _FILES_
   ex2.m         : runs Logistical Regression exercises
     X, y loaded from "ex2data1.txt"
   ex2data1.txt  : training data (X, y)
   plotData.m    : plots the training data for visual inspection
 
-  _EXERCISES_
+###_EXERCISES_
+------------------------------------------------------------------------------
+run: ex2.m
+------------------------------------------------------------------------------
+1 Logistic Regression
   1.1 Visualizing the data  : Plots the Data for Visual Inspection
   1.2 Implementation
     1.2.1 Warmup Exercise: sigmoid function 
@@ -71,6 +75,35 @@ week 03: Logistical Regression
 
           .. percentage of matches by our classifier on the training data:
           Train Accuracy: 89.000000
+
+------------------------------------------------------------------------------
+run: ex2_reg.m
+------------------------------------------------------------------------------
+2 Regularized Logistic Regression
+  
+  2.1 Visualizing the Data  : Plots the Data for Visual Inspection
+      Clearly a straight line decision boundry will not fit our data set, so
+        logistic regression is inadequate.
+  
+  2.2 Feature Mapping
+      (mapFeature.m)
+
+      map features to x1, x2, where x1 and x2 to the 0, 1, 2,..6th power
+      28-dimension vector Transposed = [1, x1, x2, x1^2, x1x2, x2^2,...x2^6]
+
+      observe the susiptibility of overfitting to such data, 
+      in combating underfit of linear logistic regression
+      via feature mapping of higher dimensional vectors.
+
+      (no code to write)
+
+
+
+
+  2.3 Cost Function and Gradient
+          (sigmoid.m)
+
+          
 
 
          
