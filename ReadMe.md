@@ -4,9 +4,11 @@ ReadMe.md
 Andrew Ng of Stanford University
 Coursera
 
-week 01:
+graded results for HW are in "grades" folder
 
-week 02:
+##week 01:
+
+##week 02:
 
 ##week 03: Logistical Regression
   _FILES_
