@@ -1,0 +1,42 @@
+grade
+
+Program paused. Press enter to continue.
+Plotting Data ...
+Program paused. Press enter to continue.
+Running Gradient Descent ...
+ans =  32.073
+Theta found by gradient descent: -3.630291 1.166362
+For population = 35,000, we predict a profit of 4519.767868
+For population = 70,000, we predict a profit of 45342.450129
+Program paused. Press enter to continue.
+Visualizing J(theta_0, theta_1) ...
+>> submit
+== Submitting solutions | Linear Regression with Multiple Variables...
+Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1736  100   671  100  1065    488    775  0:00:01  0:00:01 --:--:--   842
+A =
+
+Diagonal Matrix
+
+   1   0   0   0   0
+   0   1   0   0   0
+   0   0   1   0   0
+   0   0   0   1   0
+   0   0   0   0   1
+
+==
+==                                   Part Name |     Score | Feedback
+==                                   --------- |     ----- | --------
+==                            Warm-up Exercise |  10 /  10 | Nice work!
+==           Computing Cost (for One Variable) |  40 /  40 | Nice work!
+==         Gradient Descent (for One Variable) |  50 /  50 | Nice work!
+==                       Feature Normalization |   0 /   0 |
+==     Computing Cost (for Multiple Variables) |   0 /   0 |
+==   Gradient Descent (for Multiple Variables) |   0 /   0 |
+==                            Normal Equations |   0 /   0 |
+==                                   --------------------------------
+==                                             | 100 / 100 |
+==
+>>
