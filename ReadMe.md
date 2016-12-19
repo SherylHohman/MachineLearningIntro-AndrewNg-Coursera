@@ -19,7 +19,7 @@ week 02:
 ------------------------------------------------------------------------------
 run: ex2.m
 ------------------------------------------------------------------------------
-1 Logistic Regression
+1 Logistic Regression (Linear)
   1.1 Visualizing the data  : Plots the Data for Visual Inspection
   1.2 Implementation
     1.2.1 Warmup Exercise: sigmoid function 
@@ -79,7 +79,7 @@ run: ex2.m
 ------------------------------------------------------------------------------
 run: ex2_reg.m
 ------------------------------------------------------------------------------
-2 Regularized Logistic Regression
+2 Regularized Logistic Regression (Non-Linear, avoid overfitting)
   
   2.1 Visualizing the Data  : Plots the Data for Visual Inspection
       Clearly a straight line decision boundry will not fit our data set, so
@@ -97,13 +97,50 @@ run: ex2_reg.m
 
       (no code to write)
 
-
-
-
   2.3 Cost Function and Gradient
-          (sigmoid.m)
+      (costFunctionreg.m)
 
+      m = number of examples (training data)
+      n = number of Features
+
+      COST FUNCTION:
+      J(theta) = 1/m * SUM |i=1..m| 
+                           [     -yi  * log(    h_theta(xi)) 
+                             - (1-yi) * log(1 - h_theta(xi))
+                           ]
+                 + lambda/2m * SUM |j=1..n| 
+                                   [theta^2] 
+
+      NOTE: the lambda term is NOT to be computed on the first theta value 
+        ie (theta_0 == Octave/Matlab's theta_1)
+
+
+      
+      GRADIENT:
+**for j=0:**
+ d J(theta)
+----------- = 1/m * SUM|i=1..m| [ (h_theta(xi) - yi) * xj ]
+ d theta_j   
+
+
+**for j>=1:**
+ d J(theta)
+----------- = 1/m * SUM|i=1..m| [ (h_theta(xi) - yi) * xj ] + lambda/m * theta_j
+ d theta_j          
           
+
+      Results from running costFunctReg.m using 
+        theta initialized to zeros,
+        lambda = 1
+
+      Cost: 0.693
+
+    2.3.1 Learning Parameters
+          (ex2_reg.m)
+
+          As before, ex2_reg.m nowe uses fminunc to find optimized theta values
+
+
 
 
          
