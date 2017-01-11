@@ -246,6 +246,39 @@ graded results for HW are in "grades" folder
 
       1.4.1 One-vs-all Prediction         
           (predictOneVsAll.m)
+
+          so given values of Theta, given an image x (a row in X)
+            a vector is returned, which should be all zeros, save a single "1"
+            the "location" of that "1" signifies/indicates which digit
+            our classifier Theta predicts for that image.
+          looking at this K-element classification vector (10 elements here),
+            we can quickly label our image as digit N, by using the 
+            "max" function to find the location of "1". 
+            That location indicates our digit class
+          Our function is written in a general sense, 
+            where 10-digits/classes is not hard-coded.
+            Instead we look at the size of Theta. 
+            The number of rows of our classifier (Theta) tells us 
+            how many classes there are.
+            This is variable "K", for K classes.
+          P is a 5000 x 1 vector, to storing the class prediction 
+            for each of our 5000  images. ( size(X,1) == 5000 )
+
+          h = sigmoid( X * theta') classifies our images
+            each row is a vector of almost-zero values, and
+              and a "single" almost-one value
+          max: to locate the column with the largest "nearly-1" value
+            max( matrix, [], 2) is notation to find the max in a row, 
+            rather than max of a column (the default if "[], 2" params are not used)
+          [max_value, index] = max(matrix, [], 2)
+            notation to otain the index (column number) that max value occurs
+            we aren't interested in max_value, 
+            but that's  the only way to gain access to "index"
+          p is "index" above: the digit our classifier predicted for that image
+
+          [max_value, p] = max( sigmoid(X * all_theta'), [], 2);
+
+
   ------------------------------------------------------------------------------
   run: ex3_nn
   ------------------------------------------------------------------------------
