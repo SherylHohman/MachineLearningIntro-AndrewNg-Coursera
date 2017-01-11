@@ -2,9 +2,19 @@
 ####----------------------------------------
 #### Submission Tokens for Coursera Course Grader: Intro to Machine Learning
 
-week2-GradientDescent-ex1/ex1/token.mat
-week3-LogisticRegression-ex2/ex2/token.mat
+# each week has its own token that week's folder
+# STILL Trying to Get This to Work !!
+
+# ./week2-GradientDescent-ex1/ex1/token.mat
+# /week2-GradientDescent-ex1/ex1/token.mat
+# week2-GradientDescent-ex1/ex1/token.mat
+# week3-LogisticRegression-ex2/ex2/token.mat
+
 week*/ex*/token.mat
+# /week*/ex*/token.mat
+# */token.mat
+
+
 
 ####----------------------------------------
 #### Matlab / Octave
