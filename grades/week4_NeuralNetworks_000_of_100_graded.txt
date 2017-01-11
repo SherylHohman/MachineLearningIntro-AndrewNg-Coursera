@@ -1,40 +1,76 @@
 grade.txt
 
-Loading and Visualizing Data ...
-Program paused. Press enter to continue.
+Section 1: Multi-class Classification
+  Loading and Visualizing Data ...
+  Program paused. Press enter to continue.
 
-Training One-vs-All Logistic Regression...
-Iteration    50 | Cost: 1.374815e-002
-Iteration    50 | Cost: 5.725234e-002
-Iteration    50 | Cost: 6.393754e-002
-Iteration    50 | Cost: 3.654944e-002
-Iteration    50 | Cost: 6.179148e-002
-Iteration    50 | Cost: 2.209826e-002
-Iteration    50 | Cost: 3.372049e-002
-Iteration    50 | Cost: 8.532275e-002
-Iteration    50 | Cost: 8.411145e-002
-Iteration    50 | Cost: 9.888887e-003
-Program paused. Press enter to continue.
+  Training One-vs-All Logistic Regression...
+  Iteration    50 | Cost: 1.374815e-002
+  Iteration    50 | Cost: 5.725234e-002
+  Iteration    50 | Cost: 6.393754e-002
+  Iteration    50 | Cost: 3.654944e-002
+  Iteration    50 | Cost: 6.179148e-002
+  Iteration    50 | Cost: 2.209826e-002
+  Iteration    50 | Cost: 3.372049e-002
+  Iteration    50 | Cost: 8.532275e-002
+  Iteration    50 | Cost: 8.411145e-002
+  Iteration    50 | Cost: 9.888887e-003
+  Program paused. Press enter to continue.
 
-Training Set Accuracy: 95.020000
->> submit
-== Submitting solutions | Multi-class Classification and Neural Networks...
-Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
-Iteration    26 | Cost: 3.391340e-001
-Iteration    20 | Cost: 6.631438e-002
-Iteration    31 | Cost: 1.002636e-001
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  1137  100   503  100   634    555    700 --:--:-- --:--:-- --:--:--   738
+  Training Set Accuracy: 95.020000
+  >> submit
+  == Submitting solutions | Multi-class Classification and Neural Networks...
+  Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
+  Iteration    26 | Cost: 3.391340e-001
+  Iteration    20 | Cost: 6.631438e-002
+  Iteration    31 | Cost: 1.002636e-001
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+  100  1137  100   503  100   634    555    700 --:--:-- --:--:-- --:--:--   738
 
-==
-==                                   Part Name |     Score | Feedback
-==                                   --------- |     ----- | --------
-==             Regularized Logistic Regression |  30 /  30 | Nice work!
-==              One-vs-All Classifier Training |  20 /  20 | Nice work!
-==            One-vs-All Classifier Prediction |  20 /  20 | Nice work!
-==          Neural Network Prediction Function |   0 /  30 |
-==                                   --------------------------------
-==                                             |  70 / 100 |
+  ==
+  ==                                   Part Name |     Score | Feedback
+  ==                                   --------- |     ----- | --------
+  ==             Regularized Logistic Regression |  30 /  30 | Nice work!
+  ==              One-vs-All Classifier Training |  20 /  20 | Nice work!
+  ==            One-vs-All Classifier Prediction |  20 /  20 | Nice work!
+  ==          Neural Network Prediction Function |   0 /  30 |
+  ==                                   --------------------------------
+  ==                                             |  70 / 100 |
 ==
 >>
+
+Section 2: Neural Networks
+  ˎLoading and Visualizing Data ...
+  Program paused. Press enter to continue.
+
+  Loading Saved Neural Network Parameters ...
+
+  Training Set Accuracy: 97.520000
+  Program paused. Press enter to continue.
+
+  Displaying Example Image
+
+  Neural Network Prediction: 3 (digit 3)
+  Program paused. Press enter to continue.
+
+  >> submit
+  == Submitting solutions | Multi-class Classification and Neural Networks...
+  Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
+  Iteration    26 | Cost: 3.391340e-001
+  Iteration    20 | Cost: 6.631438e-002
+  Iteration    31 | Cost: 1.002636e-001
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+  100  1149  100   515  100   634    452    556  0:00:01  0:00:01 --:--:--   597
+
+  ==
+  ==                                   Part Name |     Score | Feedback
+  ==                                   --------- |     ----- | --------
+  ==             Regularized Logistic Regression |  30 /  30 | Nice work!
+  ==              One-vs-All Classifier Training |  20 /  20 | Nice work!
+  ==            One-vs-All Classifier Prediction |  20 /  20 | Nice work!
+  ==          Neural Network Prediction Function |  30 /  30 | Nice work!
+  ==                                   --------------------------------
+  ==                                             | 100 / 100 |
+  ==
