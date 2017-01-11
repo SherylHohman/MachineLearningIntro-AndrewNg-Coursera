@@ -1,26 +1,22 @@
 grade.txt
 
-Loading and Visualizing Data ...
-Program paused. Press enter to continue.
-
-Training One-vs-All Logistic Regression...
-Program paused. Press enter to continue.
-
-Training Set Accuracy: 0.000000
 >> submit
 == Submitting solutions | Multi-class Classification and Neural Networks...
-Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): Y
+Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
+Iteration    26 | Cost: 3.391340e-001
+Iteration    20 | Cost: 6.631438e-002
+Iteration    31 | Cost: 1.002636e-001
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  1107  100   481  100   626    434    564  0:00:01  0:00:01 --:--:--   607
+100  1126  100   492  100   634    431    556  0:00:01  0:00:01 --:--:--   606
+
 ==
 ==                                   Part Name |     Score | Feedback
 ==                                   --------- |     ----- | --------
 ==             Regularized Logistic Regression |  30 /  30 | Nice work!
-==              One-vs-All Classifier Training |   0 /  20 |
+==              One-vs-All Classifier Training |  20 /  20 | Nice work!
 ==            One-vs-All Classifier Prediction |   0 /  20 |
 ==          Neural Network Prediction Function |   0 /  30 |
 ==                                   --------------------------------
-==                                             |  30 / 100 |
+==                                             |  50 / 100 |
 ==
-嵦

@@ -224,10 +224,26 @@ graded results for HW are in "grades" folder
 
       1.3.2 Vectorizing the gradient
             (lrCostFunction.m)
+
       1.3.3 Vectorizing regularized logistic regression
             (lrCostFunction.m)
+
     1.4 One-vs-all Classfication
           (oneVsAll.m) (uses fminumc instead of minunc for efficiency)
+
+          Train classifier (find optimum theta values) for each class, 
+              ie each digit 0-9
+          For this use a loop, to iterate through each of the 10 classes/digits
+            - mask the y term to equal only matches for the class in question
+            - y == digit_class, where y is vector, digit_class is a scaler.
+              This zeroes out all columns except the one for the class in question
+            - This masked term for y is then passed to our lrCostFunction
+              to determine theta values for that digit.
+            - Actually, lrCostFunction is passed to fmincg
+              which then determines Theta values for that class
+            - Now add theta for that class to all_theta, which stores out
+              Theta values for all classes of digits.
+
       1.4.1 One-vs-all Prediction         
           (predictOneVsAll.m)
   ------------------------------------------------------------------------------
