@@ -172,10 +172,56 @@ graded results for HW are in "grades" folder
   ------------------------------------------------------------------------------
   1 Multi-class Classification
     1.1 The Dataset
+        X, y loads from ex3data1.mat
+          5000 handwritten digits as training examples (MATLAB matrix format)
+          each matrix is a 20x20 pixel grayscale image of a digit, 
+            floating point number re[resemts pixel intensity
+          this matrix is unrolled into a 400-dimensional vector
+          Each digit's unrolled matrix then becomes a row in the training data
+        
+        X then is 5000 x 400 matrix training set of image data
+        
+        y is 5000-dimensional vector containing labels for the training set
+          ie 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+        
+        since Octave/Matlab is 1-indexed instead of zero-indexed
+          "0" digit is labeled as "10", so
+          "1-9" can be labeled as expected
+
+        to make the data more compatible with Octave/MATLAB, 
+
     1.2 Visualizing the data  : Plots the Data for Visual Inspection
+        displayData.m
+          picks 100 random rows from the training data
+          and displays them on screen as an image (10x10 grid of images of digits)
+
     1.3 Vectorizing Logisitic Regression
+
+        Need to train 10 logistic regression classifiers
+          one for each class of the multi-class classifier (digits: 0-9)
+
       1.3.1 Vectorizing the cost function 
             (lrCostFunction.m)
+
+            It should be realized that each row of X represents x_Transpose
+              for that image.
+            so a row in X * Theta == x_Transpose * Theta
+                                  == Theta_Transpose * x
+
+            Remember, 
+            J(Theta) = 1/m * SUM |i=1..m|
+                                 [     -yi  * log(    h_Theta(x_i)) 
+                                   - (1-yi) * log(1 - h_Theta(x_i))
+                                 ]
+            h_Theta(x_i) = g(theta_Transpose * x_i) = g(z)
+                         
+                         where z = theta_Transpose * x_i
+
+            sigmoid(z) = g(z)= 1/[1 + e ^-z], for classification problems
+
+
+
+
       1.3.2 Vectorizing the gradient
             (lrCostFunction.m)
       1.3.3 Vectorizing regularized logistic regression
