@@ -2,9 +2,9 @@
 
 %  Instructions
 %  ------------
-% 
+%
 %  This file contains code that helps you get started on the
-%  linear exercise. You will need to complete the following functions 
+%  linear exercise. You will need to complete the following functions
 %  in this exericse:
 %
 %     lrCostFunction.m (logistic regression cost function)
@@ -21,11 +21,11 @@ clear ; close all; clc
 
 %% Setup the parameters you will use for this part of the exercise
 input_layer_size  = 400;  % 20x20 Input Images of Digits
-num_labels = 10;          % 10 labels, from 1 to 10   
+num_labels = 10;          % 10 labels, from 1 to 10
                           % (note that we have mapped "0" to label 10)
 
 %% =========== Part 1: Loading and Visualizing Data =============
-%  We start the exercise by first loading and visualizing the dataset. 
+%  We start the exercise by first loading and visualizing the dataset.
 %  You will be working with a dataset that contains handwritten digits.
 %
 
@@ -51,6 +51,22 @@ pause;
 %  that, you will implement one-vs-all classification for the handwritten
 %  digit dataset.
 %
+
+% fprintf('\nsh: Vectorize Logistic Regression...\n');
+% There is NO Test Call to lrCostFunction..
+%  I'm trying to write one, so far haven't found one that works!!
+
+% sh_temp_theta = zeros(num_labels, size(X,2));
+% % sh_temp_theta = zeros(num_labels, size(X,2)+1);
+% sh_temp_lambda = 0.1;
+% sh_temp_X = [ones(m, 1) X];
+% % sh_temp_X = X;
+% sh_temp_y = y;
+% sh_temp_y == 1 ;
+% lrCostFunction(sh_temp_theta', sh_temp_X, sh_temp_y, sh_temp_lambda);
+% fprintf('\nsh:Program paused. Press enter to continue.\n');
+% pause;
+
 
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
