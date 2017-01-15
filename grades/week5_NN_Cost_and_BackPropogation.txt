@@ -1,0 +1,33 @@
+ Directory of S:\Classes\Coursera_MachineLearningIntro_AndrewNg\week5-NN_backPropogationAnd
+CostFunction-ex4\ex4
+
+[.]                          fmincg.m
+[..]                         [lib]
+checkNNGradients.m           nnCostFunction.m
+computeNumericalGradient.m   predict.m
+debugInitializeWeights.m     randInitializeWeights.m
+displayData.m                sigmoid.m
+ex4.m                        sigmoidGradient.m
+ex4data1.mat                 submit.m
+ex4weights.mat
+              14 File(s)      7,620,739 bytes
+               3 Dir(s)  65,630,752,768 bytes free
+>> submit
+== Submitting solutions | Neural Networks Learning...
+Login (email address): sherylhohman@yahoo.com
+Token: Xpa9ftjTiGTESyk7
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1547  100   525  100  1022    354    689  0:00:01  0:00:01 --:--:--   850
+==
+==                                   Part Name |     Score | Feedback
+==                                   --------- |     ----- | --------
+==               Feedforward and Cost Function |   0 /  30 |
+==                   Regularized Cost Function |   0 /  15 |
+==                            Sigmoid Gradient |   0 /   5 |
+==   Neural Network Gradient (Backpropagation) |   0 /  40 |
+==                        Regularized Gradient |   0 /  10 |
+==                                   --------------------------------
+==                                             |   0 / 100 |
+==
+>>
