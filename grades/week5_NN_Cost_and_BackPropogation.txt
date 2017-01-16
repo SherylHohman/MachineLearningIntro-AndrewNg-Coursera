@@ -12,22 +12,37 @@ ex4data1.mat                 submit.m
 ex4weights.mat
               14 File(s)      7,620,739 bytes
                3 Dir(s)  65,630,752,768 bytes free
+Loading and Visualizing Data ...
+Program paused. Press enter to continue.
+
+Loading Saved Neural Network Parameters ...
+
+Feedforward Using Neural Network ...
+Cost at parameters (loaded from ex4weights): 0.287629
+(this value should be about 0.287629)
+
+Program paused. Press enter to continue.
+
+Checking Cost Function (w/ Regularization) ...
+Cost at parameters (loaded from ex4weights): 0.287629
+(this value should be about 0.383770)
+Program paused. Press enter to continue.
+
+
 >> submit
 == Submitting solutions | Neural Networks Learning...
-Login (email address): sherylhohman@yahoo.com
-Token: Xpa9ftjTiGTESyk7
+Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  1547  100   525  100  1022    354    689  0:00:01  0:00:01 --:--:--   850
+100  1559  100   537  100  1022    414    789  0:00:01  0:00:01 --:--:--   839
 ==
 ==                                   Part Name |     Score | Feedback
 ==                                   --------- |     ----- | --------
-==               Feedforward and Cost Function |   0 /  30 |
+==               Feedforward and Cost Function |  30 /  30 | Nice work!
 ==                   Regularized Cost Function |   0 /  15 |
 ==                            Sigmoid Gradient |   0 /   5 |
 ==   Neural Network Gradient (Backpropagation) |   0 /  40 |
 ==                        Regularized Gradient |   0 /  10 |
 ==                                   --------------------------------
-==                                             |   0 / 100 |
+==                                             |  30 / 100 |
 ==
->>

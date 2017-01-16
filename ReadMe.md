@@ -290,5 +290,12 @@ graded results for HW are in "grades" folder
     2.2 Feedforward Propagation and Prediction
         (predict.m)
 
+  Basically, we find that our neural network produces better results.
+  Higher accuracy in predictions, than logistic regression.
 
+##week 05-1: Neural Networks Learning
+  implement the backpropagation algorithm for neural
+networks and apply it to the task of hand-written digit recognition.
+  
+  1.3 Feedforward and cost function
 
