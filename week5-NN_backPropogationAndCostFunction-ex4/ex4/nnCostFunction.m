@@ -45,25 +45,44 @@ Theta2_grad = zeros(size(Theta2));
  %  RECODE y class labels (0..9) to vector representation of the classname
  %    (ie 4 -> [0 0 0 1 0 0 0 0 0 0])
  %    This turns y unit vector (5000 1) into matrix (5000 10)
- % y_matrix = eye(num_labels);    % 10x10 diagonal matrix: ea row represents its
- % y_matrix = y_matrix(y,:);      % translate class number to vector representation
- y_matrix = eye(num_labels)(y,:); % single-line version of above
+
+ Y = eye(num_labels)(y,:);
 
 
+% FORWARD PROPOGATION (hard code):
 % CALCULATE h, classification output from X, given Theta1 and Theta2
-X_plus_bias = [ones(m,1), X];
+% X_plus_bias = [ones(m,1), X];
 
-a2 = sigmoid(X_plus_bias * Theta1');
-a2_plus_bias = [ones(m,1) , a2];
+% a2 = sigmoid(X_plus_bias * Theta1');
+% a2_plus_bias = [ones(m,1) , a2];
 
-a3 = sigmoid(a2_plus_bias * Theta2');
+% a3 = sigmoid(a2_plus_bias * Theta2');
 
-h = a3;
+% h = a3;
 
+% FORWARD PROPOGATION (generalized for L layers, using loops/arrays, see above):
+% CALCULATE h, classification output from X, given Theta1 and Theta2
 
-%  Calculate J: NON-Regularized Cost, for X given Theta1, Theta2
+%  create an array of Theta values, to take advantage of looping
+Thetas = {Theta1, Theta2};
+
+% initialize input first layer terms/neurons/nodes/source
+g = X;
+
+for layer = 1:size(Thetas)+1
+  % a{layer} = [ones(m,1), g];     % add bias term to prev layer's output, g(z)
+  % z = a{layer} * Thetas{layer}'; % compute z for this layer
+  % g = sigmoid(z);                % compute g(z) this layer: feeds next layer's input
+
+  g = sigmoid( [ones(m,1), g] * Thetas{layer}' );
+end;
+
+% result from our neural network
+h = g;
+
+%  CALCULATE J: NON-Regularized Cost, for X given Theta1, Theta2
 % J = (1/m) * sum( sum(-y .* log(h) - (1-y) .* log(1-h)) );
-J = (1/m) * sum( sum(-y_matrix .* log(h) - (1-y_matrix) .* log(1-h)) );
+J =   (1/m) * sum( sum(-Y .* log(h) - (1-Y) .* log(1-h)) );
 
 % sh end
 
@@ -83,6 +102,10 @@ J = (1/m) * sum( sum(-y_matrix .* log(h) - (1-y_matrix) .* log(1-h)) );
 %         Hint: We recommend implementing backpropagation using a for-loop
 %               over the training examples if you are implementing it for the
 %               first time.
+
+
+
+
 %
 % Part 3: Implement regularization with the cost function and gradients.
 %
@@ -94,28 +117,13 @@ J = (1/m) * sum( sum(-y_matrix .* log(h) - (1-y_matrix) .* log(1-h)) );
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% -------------------------------------------------------------
+% -----------------------------------------------------------------------
 
 % =========================================================================
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
+
 
 
 end
