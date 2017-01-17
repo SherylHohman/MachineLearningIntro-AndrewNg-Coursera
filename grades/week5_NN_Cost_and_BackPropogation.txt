@@ -24,25 +24,25 @@ Cost at parameters (loaded from ex4weights): 0.287629
 Program paused. Press enter to continue.
 
 Checking Cost Function (w/ Regularization) ...
-Cost at parameters (loaded from ex4weights): 0.287629
+Cost at parameters (loaded from ex4weights): 0.383770
 (this value should be about 0.383770)
 Program paused. Press enter to continue.
-
 
 >> submit
 == Submitting solutions | Neural Networks Learning...
 Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  1559  100   537  100  1022    414    789  0:00:01  0:00:01 --:--:--   839
+100  1570  100   548  100  1022    481    897  0:00:01  0:00:01 --:--:--   977
 ==
 ==                                   Part Name |     Score | Feedback
 ==                                   --------- |     ----- | --------
 ==               Feedforward and Cost Function |  30 /  30 | Nice work!
-==                   Regularized Cost Function |   0 /  15 |
+==                   Regularized Cost Function |  15 /  15 | Nice work!
 ==                            Sigmoid Gradient |   0 /   5 |
 ==   Neural Network Gradient (Backpropagation) |   0 /  40 |
 ==                        Regularized Gradient |   0 /  10 |
 ==                                   --------------------------------
-==                                             |  30 / 100 |
+==                                             |  45 / 100 |
 ==
+>>

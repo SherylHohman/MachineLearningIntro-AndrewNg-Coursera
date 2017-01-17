@@ -297,5 +297,9 @@ graded results for HW are in "grades" folder
   implement the backpropagation algorithm for neural
 networks and apply it to the task of hand-written digit recognition.
   
-  1.3 Feedforward and cost function
+  1 Neural Networks
+
+    1.3 Feedforward and Cost Function (non-regularized)
+
+    1.4 Regularized Cost Function
 

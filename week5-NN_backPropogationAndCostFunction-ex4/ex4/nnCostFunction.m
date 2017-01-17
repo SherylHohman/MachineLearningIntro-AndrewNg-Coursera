@@ -87,9 +87,21 @@ end;
 % result from our neural network
 h = g;
 
-%  CALCULATE J: NON-Regularized Cost, for X given Theta1, Theta2
+% J: NON-REGULARIZED COST, for X given Theta1, Theta2
 % J = (1/m) * sum( sum(-y .* log(h) - (1-y) .* log(1-h)) );
 J =   (1/m) * sum( sum(-Y .* log(h) - (1-Y) .* log(1-h)) );
+
+% REGULARIZATION term of cost function
+regularization_cost = 0;
+for layer = 1:numLayers-1;
+  % this layer's Theta, without the bias term (regular weighted values only)
+  Theta_w = ( Thetas{layer} (:, 2:end) );
+  regularization_cost += sum(sum( Theta_w .^2 ));
+end
+regularization_cost *= lambda/(2*m);  % do this calc once instead of every loop
+
+%  REGULARIZED COST
+J = J + regularization_cost;
 
 % sh end
 
@@ -109,6 +121,11 @@ J =   (1/m) * sum( sum(-Y .* log(h) - (1-Y) .* log(1-h)) );
 %         Hint: We recommend implementing backpropagation using a for-loop
 %               over the training examples if you are implementing it for the
 %               first time.
+
+% sh begin
+
+
+% sh end
 
 
 %
