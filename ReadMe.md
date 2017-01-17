@@ -303,3 +303,12 @@ networks and apply it to the task of hand-written digit recognition.
 
     1.4 Regularized Cost Function
 
+  2 Backpropagation
+
+    2.1 Sigmoid gradient
+
+      sigmoid(z) = g(z) = 1/( 1 + e^-z)
+
+      g'(z) = d/dz g(z) = g(z) (1 - g(z))
+
+      vectorized, this looks like g(z) .* (1-g(z))

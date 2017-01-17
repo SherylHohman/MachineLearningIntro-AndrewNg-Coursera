@@ -33,16 +33,16 @@ Program paused. Press enter to continue.
 Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100  1570  100   548  100  1022    481    897  0:00:01  0:00:01 --:--:--   977
+100  1580  100   558  100  1022    533    977  0:00:01  0:00:01 --:--:--  1073
 ==
 ==                                   Part Name |     Score | Feedback
 ==                                   --------- |     ----- | --------
 ==               Feedforward and Cost Function |  30 /  30 | Nice work!
 ==                   Regularized Cost Function |  15 /  15 | Nice work!
-==                            Sigmoid Gradient |   0 /   5 |
+==                            Sigmoid Gradient |   5 /   5 | Nice work!
 ==   Neural Network Gradient (Backpropagation) |   0 /  40 |
 ==                        Regularized Gradient |   0 /  10 |
 ==                                   --------------------------------
-==                                             |  45 / 100 |
+==                                             |  50 / 100 |
 ==
->>
+
