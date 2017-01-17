@@ -63,17 +63,24 @@ Theta2_grad = zeros(size(Theta2));
 % FORWARD PROPOGATION (generalized for L layers, using loops/arrays, see above):
 % CALCULATE h, classification output from X, given Theta1 and Theta2
 
-%  create an array of Theta values, to take advantage of looping
+% create an array of Theta values, to take advantage of looping
+%   first layer does not have an input theta value
 Thetas = {Theta1, Theta2};
+numLayers = size(Thetas, 2) + 1;
+
 
 % initialize input first layer terms/neurons/nodes/source
-g = X;
+g = X;  % layer1, == a1 before adding the bias term for a1
 
-for layer = 1:size(Thetas)+1
-  % a{layer} = [ones(m,1), g];     % add bias term to prev layer's output, g(z)
-  % z = a{layer} * Thetas{layer}'; % compute z for this layer
-  % g = sigmoid(z);                % compute g(z) this layer: feeds next layer's input
+for layer = 1:numLayers-1
+  % a{layer} = [ones(m,1), g]; % add bias term to a{layer},
+  %                             == g{layer-1} == g(z{layer-1}) from prev layer
+  % z{layer+1} = a{layer} * Thetas{layer}'; % compute z for this layer
+  % g{layer+1} = sigmoid( z{layer+1} );     % compute g(z) this layer: feeds layer a+1
 
+  %  g{layer+1} = sigmoid( [ones(m,1), g{layer}] * Thetas{layer}' );
+
+  % (since no need to store intermediate g's)(or z's, or a's):
   g = sigmoid( [ones(m,1), g] * Thetas{layer}' );
 end;
 
@@ -102,8 +109,6 @@ J =   (1/m) * sum( sum(-Y .* log(h) - (1-Y) .* log(1-h)) );
 %         Hint: We recommend implementing backpropagation using a for-loop
 %               over the training examples if you are implementing it for the
 %               first time.
-
-
 
 
 %
