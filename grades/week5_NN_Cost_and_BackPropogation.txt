@@ -1,182 +1,182 @@
- >> submit
-== Submitting solutions | Neural Networks Learning...
-Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  1623  100   581  100  1042    376    674  0:00:01  0:00:01 --:--:--   824
-==
-==                                   Part Name |     Score | Feedback
-==                                   --------- |     ----- | --------
-==               Feedforward and Cost Function |  30 /  30 | Nice work!
-==                   Regularized Cost Function |  15 /  15 | Nice work!
-==                            Sigmoid Gradient |   5 /   5 | Nice work!
-==   Neural Network Gradient (Backpropagation) |  40 /  40 | Nice work!
-==                        Regularized Gradient |  10 /  10 | Nice work!
-==                                   --------------------------------
-==                                             | 100 / 100 |
-==
+>> submit
+  == Submitting solutions | Neural Networks Learning...
+  Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+  100  1623  100   581  100  1042    376    674  0:00:01  0:00:01 --:--:--   824
+  ==
+  ==                                   Part Name |     Score | Feedback
+  ==                                   --------- |     ----- | --------
+  ==               Feedforward and Cost Function |  30 /  30 | Nice work!
+  ==                   Regularized Cost Function |  15 /  15 | Nice work!
+  ==                            Sigmoid Gradient |   5 /   5 | Nice work!
+  ==   Neural Network Gradient (Backpropagation) |  40 /  40 | Nice work!
+  ==                        Regularized Gradient |  10 /  10 | Nice work!
+  ==                                   --------------------------------
+  ==                                             | 100 / 100 |
+  ==
 
 --------------------------------------------------------------------------------
 -------- OUTPUT EX4: ----------
 --------------------------------------------------------------------------------
 
-Loading and Visualizing Data ...
-Program paused. Press enter to continue.
+  Loading and Visualizing Data ...
+  Program paused. Press enter to continue.
 
-Loading Saved Neural Network Parameters ...
+  Loading Saved Neural Network Parameters ...
 
-Feedforward Using Neural Network ...
-Cost at parameters (loaded from ex4weights): 0.287629
-(this value should be about 0.287629)
+  Feedforward Using Neural Network ...
+  Cost at parameters (loaded from ex4weights): 0.287629
+  (this value should be about 0.287629)
 
-Program paused. Press enter to continue.
+  Program paused. Press enter to continue.
 
-Checking Cost Function (w/ Regularization) ...
-Cost at parameters (loaded from ex4weights): 0.383770
-(this value should be about 0.383770)
-Program paused. Press enter to continue.
+  Checking Cost Function (w/ Regularization) ...
+  Cost at parameters (loaded from ex4weights): 0.383770
+  (this value should be about 0.383770)
+  Program paused. Press enter to continue.
 
-Initializing Neural Network Parameters ...
+  Initializing Neural Network Parameters ...
 
-Checking Backpropagation...
-  -9.2783e-003  -9.2783e-003
-  8.8991e-003  8.8991e-003
-  -8.3601e-003  -8.3601e-003
-  7.6281e-003  7.6281e-003
-  -6.7480e-003  -6.7480e-003
-  -3.0498e-006  -3.0498e-006
-  1.4287e-005  1.4287e-005
-  -2.5938e-005  -2.5938e-005
-  3.6988e-005  3.6988e-005
-  -4.6876e-005  -4.6876e-005
-  -1.7506e-004  -1.7506e-004
-  2.3315e-004  2.3315e-004
-  -2.8747e-004  -2.8747e-004
-  3.3532e-004  3.3532e-004
-  -3.7622e-004  -3.7622e-004
-  -9.6266e-005  -9.6266e-005
-  1.1798e-004  1.1798e-004
-  -1.3715e-004  -1.3715e-004
-  1.5325e-004  1.5325e-004
-  -1.6656e-004  -1.6656e-004
-  3.1454e-001  3.1454e-001
-  1.1106e-001  1.1106e-001
-  9.7401e-002  9.7401e-002
-  1.6409e-001  1.6409e-001
-  5.7574e-002  5.7574e-002
-  5.0458e-002  5.0458e-002
-  1.6457e-001  1.6457e-001
-  5.7787e-002  5.7787e-002
-  5.0753e-002  5.0753e-002
-  1.5834e-001  1.5834e-001
-  5.5924e-002  5.5924e-002
-  4.9162e-002  4.9162e-002
-  1.5113e-001  1.5113e-001
-  5.3697e-002  5.3697e-002
-  4.7146e-002  4.7146e-002
-  1.4957e-001  1.4957e-001
-  5.3154e-002  5.3154e-002
-  4.6560e-002  4.6560e-002
+  Checking Backpropagation...
+    -9.2783e-003  -9.2783e-003
+    8.8991e-003  8.8991e-003
+    -8.3601e-003  -8.3601e-003
+    7.6281e-003  7.6281e-003
+    -6.7480e-003  -6.7480e-003
+    -3.0498e-006  -3.0498e-006
+    1.4287e-005  1.4287e-005
+    -2.5938e-005  -2.5938e-005
+    3.6988e-005  3.6988e-005
+    -4.6876e-005  -4.6876e-005
+    -1.7506e-004  -1.7506e-004
+    2.3315e-004  2.3315e-004
+    -2.8747e-004  -2.8747e-004
+    3.3532e-004  3.3532e-004
+    -3.7622e-004  -3.7622e-004
+    -9.6266e-005  -9.6266e-005
+    1.1798e-004  1.1798e-004
+    -1.3715e-004  -1.3715e-004
+    1.5325e-004  1.5325e-004
+    -1.6656e-004  -1.6656e-004
+    3.1454e-001  3.1454e-001
+    1.1106e-001  1.1106e-001
+    9.7401e-002  9.7401e-002
+    1.6409e-001  1.6409e-001
+    5.7574e-002  5.7574e-002
+    5.0458e-002  5.0458e-002
+    1.6457e-001  1.6457e-001
+    5.7787e-002  5.7787e-002
+    5.0753e-002  5.0753e-002
+    1.5834e-001  1.5834e-001
+    5.5924e-002  5.5924e-002
+    4.9162e-002  4.9162e-002
+    1.5113e-001  1.5113e-001
+    5.3697e-002  5.3697e-002
+    4.7146e-002  4.7146e-002
+    1.4957e-001  1.4957e-001
+    5.3154e-002  5.3154e-002
     4.6560e-002  4.6560e-002
-The above two columns you get should be very similar.
-(Left-Your Numerical Gradient, Right-Analytical Gradient)
+      4.6560e-002  4.6560e-002
+  The above two columns you get should be very similar.
+  (Left-Your Numerical Gradient, Right-Analytical Gradient)
 
-If your backpropagation implementation is correct, then
-the relative difference will be small (less than 1e-9).
+  If your backpropagation implementation is correct, then
+  the relative difference will be small (less than 1e-9).
 
-Relative Difference: 2.33552e-011
+  Relative Difference: 2.33552e-011
 
-Program paused. Press enter to continue.
+  Program paused. Press enter to continue.
 
-Checking Backpropagation (w/ Regularization) ...
-  -9.2783e-003  -9.2783e-003
-  8.8991e-003  8.8991e-003
-  -8.3601e-003  -8.3601e-003
-  7.6281e-003  7.6281e-003
-  -6.7480e-003  -6.7480e-003
-  -1.6768e-002  -1.6768e-002
-  3.9433e-002  3.9433e-002
-  5.9336e-002  5.9336e-002
-  2.4764e-002  2.4764e-002
-  -3.2688e-002  -3.2688e-002
-  -6.0174e-002  -6.0174e-002
-  -3.1961e-002  -3.1961e-002
-  2.4923e-002  2.4923e-002
-  5.9772e-002  5.9772e-002
-  3.8641e-002  3.8641e-002
-  -1.7370e-002  -1.7370e-002
-  -5.7566e-002  -5.7566e-002
-  -4.5196e-002  -4.5196e-002
-  9.1459e-003  9.1459e-003
-  5.4610e-002  5.4610e-002
-  3.1454e-001  3.1454e-001
-  1.1106e-001  1.1106e-001
-  9.7401e-002  9.7401e-002
-  1.1868e-001  1.1868e-001
-  3.8193e-005  3.8193e-005
-  3.3693e-002  3.3693e-002
-  2.0399e-001  2.0399e-001
-  1.1715e-001  1.1715e-001
-  7.5480e-002  7.5480e-002
-  2.0399e-001  2.0399e-001
-  1.1715e-001  1.1715e-001
-  7.5480e-002  7.5480e-002
-  1.2570e-001  1.2570e-001
-  -4.0759e-003  -4.0759e-003
-  1.6968e-002  1.6968e-002
-  1.7634e-001  1.7634e-001
-  1.1313e-001  1.1313e-001
-  8.6163e-002  8.6163e-002
-  1.3229e-001  1.3229e-001
-  -4.5296e-003  -4.5296e-003
-  1.5005e-003  1.5005e-003
-The above two columns you get should be very similar.
-(Left-Your Numerical Gradient, Right-Analytical Gradient)
+  Checking Backpropagation (w/ Regularization) ...
+    -9.2783e-003  -9.2783e-003
+    8.8991e-003  8.8991e-003
+    -8.3601e-003  -8.3601e-003
+    7.6281e-003  7.6281e-003
+    -6.7480e-003  -6.7480e-003
+    -1.6768e-002  -1.6768e-002
+    3.9433e-002  3.9433e-002
+    5.9336e-002  5.9336e-002
+    2.4764e-002  2.4764e-002
+    -3.2688e-002  -3.2688e-002
+    -6.0174e-002  -6.0174e-002
+    -3.1961e-002  -3.1961e-002
+    2.4923e-002  2.4923e-002
+    5.9772e-002  5.9772e-002
+    3.8641e-002  3.8641e-002
+    -1.7370e-002  -1.7370e-002
+    -5.7566e-002  -5.7566e-002
+    -4.5196e-002  -4.5196e-002
+    9.1459e-003  9.1459e-003
+    5.4610e-002  5.4610e-002
+    3.1454e-001  3.1454e-001
+    1.1106e-001  1.1106e-001
+    9.7401e-002  9.7401e-002
+    1.1868e-001  1.1868e-001
+    3.8193e-005  3.8193e-005
+    3.3693e-002  3.3693e-002
+    2.0399e-001  2.0399e-001
+    1.1715e-001  1.1715e-001
+    7.5480e-002  7.5480e-002
+    2.0399e-001  2.0399e-001
+    1.1715e-001  1.1715e-001
+    7.5480e-002  7.5480e-002
+    1.2570e-001  1.2570e-001
+    -4.0759e-003  -4.0759e-003
+    1.6968e-002  1.6968e-002
+    1.7634e-001  1.7634e-001
+    1.1313e-001  1.1313e-001
+    8.6163e-002  8.6163e-002
+    1.3229e-001  1.3229e-001
+    -4.5296e-003  -4.5296e-003
+    1.5005e-003  1.5005e-003
+  The above two columns you get should be very similar.
+  (Left-Your Numerical Gradient, Right-Analytical Gradient)
 
-If your backpropagation implementation is correct, then
-the relative difference will be small (less than 1e-9).
+  If your backpropagation implementation is correct, then
+  the relative difference will be small (less than 1e-9).
 
-Relative Difference: 2.25401e-011
+  Relative Difference: 2.25401e-011
 
 
-Cost at (fixed) debugging parameters (w/ lambda = 3.000000): 0.576051
-(for lambda = 3, this value should be about 0.576051)
+  Cost at (fixed) debugging parameters (w/ lambda = 3.000000): 0.576051
+  (for lambda = 3, this value should be about 0.576051)
 
-Program paused. Press enter to continue.
+  Program paused. Press enter to continue.
 
-Training Neural Network...
-Iteration    50 | Cost: 2.727757e+000
-Program paused. Press enter to continue.
+  Training Neural Network...
+  Iteration    50 | Cost: 4.933293e-001
+  Program paused. Press enter to continue.
 
-Visualizing Neural Network...
+  Visualizing Neural Network...
 
-Program paused. Press enter to continue.
+  Program paused. Press enter to continue.
 
-Training Set Accuracy: 33.080000
+  Training Set Accuracy: 95.060000
+
 
 --------------------------------------------------------------------------------
-PROBLEM: Training Accuracy should be 95.3 % !!! (NOT 33.1% !)
-
-SOMETHING IS NOT CORRECT !! :-(
-  In fact, if set MaxIter to 400 in ex4.m, and right learning settings, 
+  If set MaxIter to 400 in ex4.m, and change lambda, 
     it's possible to get the neural network to Perfectly Fit the training set !
 --------------------------------------------------------------------------------
+
+
 --------------------------------------------------------------------------------
 Directory of S:\Classes\Coursera_MachineLearningIntro_AndrewNg\week5-NN_backPropogationAnd
-CostFunction-ex4\ex4
---------------------------------------------------------------------------------
+  CostFunction-ex4\ex4
+  --------------------------------------------------------------------------------
 
-[.]                          fmincg.m
-[..]                         [lib]
-checkNNGradients.m           nnCostFunction.m
-computeNumericalGradient.m   predict.m
-debugInitializeWeights.m     randInitializeWeights.m
-displayData.m                sigmoid.m
-ex4.m                        sigmoidGradient.m
-ex4data1.mat                 submit.m
-ex4weights.mat
-              14 File(s)      7,620,739 bytes
-               3 Dir(s)  65,630,752,768 bytes free
+  [.]                          fmincg.m
+  [..]                         [lib]
+  checkNNGradients.m           nnCostFunction.m
+  computeNumericalGradient.m   predict.m
+  debugInitializeWeights.m     randInitializeWeights.m
+  displayData.m                sigmoid.m
+  ex4.m                        sigmoidGradient.m
+  ex4data1.mat                 submit.m
+  ex4weights.mat
+                14 File(s)      7,620,739 bytes
+                 3 Dir(s)  65,630,752,768 bytes free
 --------------------------------------------------------------------------------
 
 
