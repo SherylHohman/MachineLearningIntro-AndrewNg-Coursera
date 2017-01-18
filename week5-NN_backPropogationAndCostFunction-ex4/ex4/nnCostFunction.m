@@ -23,18 +23,6 @@ Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
 Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
                  num_labels, (hidden_layer_size + 1));
 
-%  sh temp print variables
-% printf(' num_labels: %d\n  input_layer_size: %d x %d\n hidden_layer_size: %d x %d\n sizeX: %d x %d \n sizey: %d x %d \n\n', num_labels, input_layer_size, hidden_layer_size,  size(X), size(y));
-% printf('nn_params, input_layer_size, hidden_layer_size, lambda \n num_labels, sizeX, sizey \n\n');
-%  % nn_params, input_layer_size, hidden_layer_size, lambda,
-%  size(num_labels)
-%  size(X)
-%  size(y)
-
-%  sh temp print variables
-% printf('\n sizeTheta1: %d x %d \n sizeTheta2: %d x %d \n\n\n', size(Theta1), size(Theta2));
-
-
 
 % Setup some useful variables
 m = size(X, 1);
@@ -109,8 +97,8 @@ J =   (1/m) * sum( sum(-Y .* log(h) - (1-Y) .* log(1-h)) );
 regularization_cost = 0;
 for layer = 1:numLayers-1;
   % this layer's Theta, without the bias term (regular weighted values only)
-  Theta_w = ( Thetas{layer} (:, 2:end) );
-  regularization_cost += sum(sum( Theta_w .^2 ));
+  Theta_no_bias = ( Thetas{layer} (:, 2:end) );
+  regularization_cost += sum(sum( Theta_no_bias .^2 ));
 end
 regularization_cost *= lambda/(2*m);  % do this calc once instead of every loop
 
@@ -138,15 +126,13 @@ J = J + regularization_cost;
 
 % sh begin
 
-% TODO: fix line below
-Delta3 = Delta2 = Delta1 = sum_delta2 = sum_gradient2 = sum_gradient1 = 0;
-% size(Theta2_grad)
+Delta2 = Theta2_grad;
+Delta1 = Theta1_grad;
 
-% for every sample in our training set (m samples):
+% loop thru the examples in our training set (m samples):
 for m_example = 1:m
-% for i = 1:m
 
-  %  1. FORWARD PROP (this sample)
+  %  1. FORWARD PROP (on m_example)
                         %    j1 = 400 number of nodes layer1; j2=25; j3=10
                         %Theta1 % size:25 x 401 == j2 x (j1 + bias)
   a1 = X(m_example, :);         % size: 1 x 400 ==  1 x j1
@@ -163,13 +149,13 @@ for m_example = 1:m
 
   h = a3;
 
-  % 2. BACKPROP on OUTPUT Layer:
+  % 2. BACKPROP on OUTPUT Layer (on row m_example, of m rows):
   %    delta3_k = (a3_k - y_k)
   %     (vector  :  (m x j3) - (m x hclasses) = (5000 x 10)-(5000x10) = 5000x10
   %     (oneRow i:  (1 x j3) - (1 x j3)       = (1 x j3) = (1x10)
   delta3 = a3 - Y(m_example, :);
 
-  % 3. BACKPROP on HIDDEN Layer:
+  % 3. BACKPROP on HIDDEN Layer (on m_example):
   %    delta2_k = (Theta2_Transpose)(delta3) .* g'(z), where g'(z) is gradient
                           %Theta2  size:  j3 x (j2 + bias) == 10 x 26
 
@@ -181,85 +167,29 @@ for m_example = 1:m
   %
   %  remove bias unit from Theta2  resulting size: j3 x j2 = 10 x 25
   Theta2_noBias = Theta2(:, 2:end);
-  % size(Theta2_noBias)
-  % this delta is for a single training example (using for-loop)
-  %               Not a vector of all m examples
-  %         1 x 10  *   (10x25)       .*    1 x 25
+
+  % this delta is for a single training example (using for-loop) (ie m=1)
+  %               Not a vector of all m examples (here m == 1)
+  % 1x25 =  1 x 10  *     (10x25)     .*    1 x 25
   delta2 = (delta3) * (Theta2_noBias) .* sigmoidGradient(z2);
-  % size(delta2)
 
-  %%%%  remove bias term
-  % delta2 = delta2(2:end);
-  %%%%% delta2(1,:) = [];
-  % size(delta2)
-  % whos
+  % 4. Accumulate Big Delta: Sum Deltas as LOOP through all m training samples..
 
-  % 4. Sum/Accumulate Big Delta for each layer ??
-  % size(delta2)
-  % size(a2)
-  % size(delta3)
-  % Delta2 += (a2' * delta3);
-  % sum_delta2 += (a2' * delta3);
-  % size(Delta3)
+  %  Note that when looping thru training samples, m==1; if vectorize it, m==m=5k
+  %  D2 (m x j3)' * (m x a2+bias) = (10 x m) * (m *  25+1) = (10 x  26)
+  %  D1 (m x j2)' * (m x a1+bias) = (25 x m) * (m * 400+1) = (25 x 401)
+  %  NEED a_WITH_BIAS !!
+  Delta2 += (delta3' * a2_plus_bias);
+  Delta1 += (delta2' * a1_plus_bias);
 
-  % sum_gradient2 += (delta3' * a2);
-  % Delta2 += (delta3' * a2);
-  % if (m_example==1)
-  %   size(a2)
-  %   size(delta3)
-  %   size(a1)
-  %   size(delta2)
-  % endif
-
-  % Delta2 += (a2' * delta3);
-  % Delta1 += (a1' * delta2);
-  Delta2 += (delta3' * a2);
-  Delta1 += (delta2' * a1);
-
-
-  % size(sum_gradient2)
-  % Theta2_grad = sum_gradient2;
-  % size(Theta2_grad)
-
-  % sum_gradient1 += (delta2' * a1);
-  % size(a1)
-  % size(delta2)
-  % size(Delta2)
-  % Delta1 += (a1' * delta2);
-  % Theta1_grad = sum_gradient1;
 end
 
-% size(Delta2)
-% size(Delta1)
-
 % 5. UNREGULARIZED GRADIENT
-% size(Theta1_grad)
-% size(Theta2_grad)
-% Theta2_grad = sum_gradient2 / m;
+
 Theta2_grad = Delta2/m;
 Theta1_grad = Delta1/m;
-% size(Theta1_grad)
-% size(Theta2_grad)
-
-  % sh quick hack to make Deltas the correct dimensions..
-  % size(Delta2)
-  Theta2_grad = [ ones(size(Theta2_grad,1),1)  Theta2_grad ];
-  Theta1_grad = [ ones(size(Theta1_grad,1),1)  Theta1_grad ];
-  % size(Delta2)
-
-% size(Theta2_grad)
 
 
-%
-
-
-
-
-
-
-  % remove: use later..
-  % 2. CLASSIFY our result
-  % [~, h] = max( g3, [], 2);   % max value of row --> 1, rest--> 0
 % sh end
 
 
