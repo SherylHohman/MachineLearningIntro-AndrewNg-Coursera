@@ -3,6 +3,7 @@ function [J grad] = nnCostFunction(nn_params, ...
                                    hidden_layer_size, ...
                                    num_labels, ...
                                    X, y, lambda)
+
 %NNCOSTFUNCTION Implements the neural network cost function for a two layer
 %neural network which performs classification
 %   [J grad] = NNCOSTFUNCTON(nn_params, hidden_layer_size, num_labels, ...
@@ -21,6 +22,19 @@ Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
 
 Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
                  num_labels, (hidden_layer_size + 1));
+
+%  sh temp print variables
+% printf(' num_labels: %d\n  input_layer_size: %d x %d\n hidden_layer_size: %d x %d\n sizeX: %d x %d \n sizey: %d x %d \n\n', num_labels, input_layer_size, hidden_layer_size,  size(X), size(y));
+% printf('nn_params, input_layer_size, hidden_layer_size, lambda \n num_labels, sizeX, sizey \n\n');
+%  % nn_params, input_layer_size, hidden_layer_size, lambda,
+%  size(num_labels)
+%  size(X)
+%  size(y)
+
+%  sh temp print variables
+% printf('\n sizeTheta1: %d x %d \n sizeTheta2: %d x %d \n\n\n', size(Theta1), size(Theta2));
+
+
 
 % Setup some useful variables
 m = size(X, 1);
@@ -124,7 +138,128 @@ J = J + regularization_cost;
 
 % sh begin
 
+% TODO: fix line below
+Delta3 = Delta2 = Delta1 = sum_delta2 = sum_gradient2 = sum_gradient1 = 0;
+% size(Theta2_grad)
 
+% for every sample in our training set (m samples):
+for m_example = 1:m
+% for i = 1:m
+
+  %  1. FORWARD PROP (this sample)
+                        %    j1 = 400 number of nodes layer1; j2=25; j3=10
+                        %Theta1 % size:25 x 401 == j2 x (j1 + bias)
+  a1 = X(m_example, :);         % size: 1 x 400 ==  1 x j1
+  a1_plus_bias = [1 a1];        % size: 1 x 401 ==  1 x j1+1
+  z2 = a1_plus_bias * Theta1';  % size: 1 x  25 ==  1 x j2
+                                %               == (1 x j1+bias)*(j2 x j1+bias)'
+                                %               == (1 x 401)    * (25 x 401)'
+  g2 = sigmoid(z2);             % size: 1 x  25 == size(z2) == size(1 x j2)
+
+  a2 = g2;                      % 1 x j2   = 1 x 25
+  a2_plus_bias = [1 a2];        % 1 x j2+1 = 1 x 26
+  z3 = a2_plus_bias * Theta2';  % (1 x j2+1)*(j3 x j2+1)' = (1 x j3) = (1 x 10)
+  a3 = g3 = sigmoid(z3);        % 1 x j3   = 1 x 10
+
+  h = a3;
+
+  % 2. BACKPROP on OUTPUT Layer:
+  %    delta3_k = (a3_k - y_k)
+  %     (vector  :  (m x j3) - (m x hclasses) = (5000 x 10)-(5000x10) = 5000x10
+  %     (oneRow i:  (1 x j3) - (1 x j3)       = (1 x j3) = (1x10)
+  delta3 = a3 - Y(m_example, :);
+
+  % 3. BACKPROP on HIDDEN Layer:
+  %    delta2_k = (Theta2_Transpose)(delta3) .* g'(z), where g'(z) is gradient
+                          %Theta2  size:  j3 x (j2 + bias) == 10 x 26
+
+  % size(Theta2_noBias')  % (j3 x j2)' =   (10 x 25)' = 25 x 10
+  % size(delta3)--vector  %   m x j3   =  5000 x 10
+  % size(delta3)--oneRow  %   1 x j3   =     1 x 10  (single training example)
+  % size(z2)              %   1 x j2   =     1 x 25
+  % size(delta2)          %   1 x j2   =     1 x 25 == (25x10) * (1x10)
+  %
+  %  remove bias unit from Theta2  resulting size: j3 x j2 = 10 x 25
+  Theta2_noBias = Theta2(:, 2:end);
+  % size(Theta2_noBias)
+  % this delta is for a single training example (using for-loop)
+  %               Not a vector of all m examples
+  %         1 x 10  *   (10x25)       .*    1 x 25
+  delta2 = (delta3) * (Theta2_noBias) .* sigmoidGradient(z2);
+  % size(delta2)
+
+  %%%%  remove bias term
+  % delta2 = delta2(2:end);
+  %%%%% delta2(1,:) = [];
+  % size(delta2)
+  % whos
+
+  % 4. Sum/Accumulate Big Delta for each layer ??
+  % size(delta2)
+  % size(a2)
+  % size(delta3)
+  % Delta2 += (a2' * delta3);
+  % sum_delta2 += (a2' * delta3);
+  % size(Delta3)
+
+  % sum_gradient2 += (delta3' * a2);
+  % Delta2 += (delta3' * a2);
+  % if (m_example==1)
+  %   size(a2)
+  %   size(delta3)
+  %   size(a1)
+  %   size(delta2)
+  % endif
+
+  % Delta2 += (a2' * delta3);
+  % Delta1 += (a1' * delta2);
+  Delta2 += (delta3' * a2);
+  Delta1 += (delta2' * a1);
+
+
+  % size(sum_gradient2)
+  % Theta2_grad = sum_gradient2;
+  % size(Theta2_grad)
+
+  % sum_gradient1 += (delta2' * a1);
+  % size(a1)
+  % size(delta2)
+  % size(Delta2)
+  % Delta1 += (a1' * delta2);
+  % Theta1_grad = sum_gradient1;
+end
+
+% size(Delta2)
+% size(Delta1)
+
+% 5. UNREGULARIZED GRADIENT
+% size(Theta1_grad)
+% size(Theta2_grad)
+% Theta2_grad = sum_gradient2 / m;
+Theta2_grad = Delta2/m;
+Theta1_grad = Delta1/m;
+% size(Theta1_grad)
+% size(Theta2_grad)
+
+  % sh quick hack to make Deltas the correct dimensions..
+  % size(Delta2)
+  Theta2_grad = [ ones(size(Theta2_grad,1),1)  Theta2_grad ];
+  Theta1_grad = [ ones(size(Theta1_grad,1),1)  Theta1_grad ];
+  % size(Delta2)
+
+% size(Theta2_grad)
+
+
+%
+
+
+
+
+
+
+  % remove: use later..
+  % 2. CLASSIFY our result
+  % [~, h] = max( g3, [], 2);   % max value of row --> 1, rest--> 0
 % sh end
 
 

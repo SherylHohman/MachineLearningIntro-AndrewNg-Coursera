@@ -312,3 +312,23 @@ networks and apply it to the task of hand-written digit recognition.
       g'(z) = d/dz g(z) = g(z) (1 - g(z))
 
       vectorized, this looks like g(z) .* (1-g(z))
+
+    2.2 Random initialization (initial Theta values)
+      To train a neural network, initial Theta values must be randomly 
+        initialized with different small, but non-zero values to break symmetry.
+      Here we'll initialize Theta_initial in range [-epsilon_init, epsilon_init].
+  
+          epsilon_init = 0.12:
+          W = rand(L_out, 1 + L_in) * 2 * epsilin_init - epsilon_init;
+
+      An generally effective strategy for choosing epsilon_init is to base it 
+      on the number of units in the network, ie: 
+          epsilon_init = sqrt(6)/sqrt(L_in + L_out)
+      where L_in = sl and L_out = sl+1 are the number of units in the 
+      layers adjacent to Theta(l) <that is a lowercase L, not a 1>
+
+    2.3 Backpropagation
+    
+
+
+
