@@ -202,6 +202,25 @@ Theta1_grad = Delta1/m;
 %               and Theta2_grad from Part 2.
 %
 
+% sh begin
+
+% Zero-out Bias terms in Theta1, Theta2, since we don't Regularize on the bias term.  By masking that term, or zeroing it out, we can then write the formula in a vectorized manner, using a single formula, Rather than 1 for j=0, and another for j>-1  (In Octave the j=0 term is actually j=1, as Octave is 1-based, rather than 0-based.)
+
+% REGULARIZATION TERM FOR GRADIENT in BackPropogation
+Theta2_zeroed_bias = Theta2;
+Theta2_zeroed_bias(:,1)  = 0;
+
+Theta1_zeroed_bias = Theta1;
+Theta1_zeroed_bias(:,1)  = 0;
+
+regularization_term_grad2 = (lambda/m) * Theta2_zeroed_bias;
+regularization_term_grad1 = (lambda/m) * Theta1_zeroed_bias;
+
+%  add gradient Regularization term to the gradients
+Theta2_grad += regularization_term_grad2;
+Theta1_grad += regularization_term_grad1;
+
+% sh end
 
 
 % -----------------------------------------------------------------------
