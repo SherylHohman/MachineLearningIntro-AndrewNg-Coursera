@@ -155,6 +155,13 @@ Program paused. Press enter to continue.
 Training Set Accuracy: 33.080000
 
 --------------------------------------------------------------------------------
+PROBLEM: Training Accuracy should be 95.3 % !!! (NOT 33.1% !)
+
+SOMETHING IS NOT CORRECT !! :-(
+  In fact, if set MaxIter to 400 in ex4.m, and right learning settings, 
+    it's possible to get the neural network to Perfectly Fit the training set !
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Directory of S:\Classes\Coursera_MachineLearningIntro_AndrewNg\week5-NN_backPropogationAnd
 CostFunction-ex4\ex4
 --------------------------------------------------------------------------------
