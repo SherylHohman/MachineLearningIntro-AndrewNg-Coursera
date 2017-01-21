@@ -1,0 +1,23 @@
+Loading and Visualizing Data ...
+Program paused. Press enter to continue.
+Cost at theta = [1 ; 1]: 303.993192
+(this value should be about 303.993192)
+Program paused. Press enter to continue.
+
+>> submit
+== Submitting solutions | Regularized Linear Regression and Bias/Variance...
+Use token from last successful submission (sherylhohman@yahoo.com)? (Y/n): y
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1425  100   538  100   887    202    334  0:00:02  0:00:02 --:--:--   338
+==
+==                                   Part Name |     Score | Feedback
+==                                   --------- |     ----- | --------
+== Regularized Linear Regression Cost Function |  25 /  25 | Nice work!
+==      Regularized Linear Regression Gradient |   0 /  25 |
+==                              Learning Curve |   0 /  20 |
+==                  Polynomial Feature Mapping |   0 /  10 |
+==                            Validation Curve |   0 /  20 |
+==                                   --------------------------------
+==                                             |  25 / 100 |
+==
